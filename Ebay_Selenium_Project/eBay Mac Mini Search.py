@@ -34,4 +34,5 @@ def test_print_items_price():
     driver.quit()
 
     # pytest -s C:\Users\Ankit Kumar\PycharmProjects\Focus\03_Xpath\task01_edge.py --alluredir=./allure-results
+
     # allure serve allure-results
