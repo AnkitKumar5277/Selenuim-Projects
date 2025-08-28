@@ -1,10 +1,15 @@
 # Import necessary libraries
 import time
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+
+@allure.title("Opencart Registration Account Testing With Selenium_Mini_Project 3")
+@allure.description("TC1 - Positive TC - Fill the registration form with valid data and verify account creation")
+@pytest.mark.positive
 
 # Set up the Edge browser in private mode
 options = webdriver.EdgeOptions()
@@ -84,4 +89,5 @@ print("Appointment successfully booked! Browser will close in 10 seconds.")
 time.sleep(10)
 
 # Close the browser
+
 driver.quit()
