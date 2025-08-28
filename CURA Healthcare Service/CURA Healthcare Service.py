@@ -91,3 +91,5 @@ time.sleep(10)
 # Close the browser
 
 driver.quit()
+
+# pytest -s Selenium_Project3.py --alluredir=./allure-results
