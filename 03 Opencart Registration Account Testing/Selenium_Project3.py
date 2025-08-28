@@ -1,66 +1,53 @@
 import pytest
 import allure
-import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.edge.options import Options
 
-@allure.title("Opencart Registration Account Testing with selenium_mini_project 3")
-@allure.description("TC1 - positive TC - fill the registration form with valid data verify whether account created")
-@pytest.mark.Positive
+@allure.title("Opencart Registration Account Testing With Selenium_Mini_Project 3")
+@allure.description("TC1 - Positive TC - Fill the registration form with valid data and verify account creation")
+@pytest.mark.positive
 def test_awesome_qa():
-    driver = webdriver.Edge()
+    # Setup Edge options (optional: run in private mode)
+    edge_options = Options()
+    # edge_options.add_argument("--inprivate")  # uncomment for private mode
+    driver = webdriver.Edge(options=edge_options)
+
+    wait = WebDriverWait(driver, 10)
+    driver.maximize_window()
     driver.get("https://awesomeqa.com/ui/index.php?route=account/register")
 
-    time.sleep(1)
-    # firstname element
-    ele_firstname = driver.find_element(By.XPATH, "//input[@name='firstname']")
-    ele_firstname.send_keys("Ankit")
+    # Fill registration form
+    wait.until(EC.presence_of_element_located((By.NAME, "firstname"))).send_keys("Ankit")
+    driver.find_element(By.NAME, "lastname").send_keys("Kumar")
+    driver.find_element(By.ID, "input-email").send_keys("srt65spr18@gmail.com")
+    driver.find_element(By.ID, "input-telephone").send_keys("6829994324")
+    driver.find_element(By.NAME, "password").send_keys("Sakhamudi@3001")
+    driver.find_element(By.NAME, "confirm").send_keys("Sakhamudi@3001")
 
-    time.sleep(1)
-    # lastname element
-    ele_lastname = driver.find_element(By.XPATH, "//input[@name='lastname']")
-    ele_lastname.send_keys("Kumar")
+    # Accept policy checkbox
+    driver.find_element(By.NAME, "agree").click()
 
-    time.sleep(1)
-    # e-mail element
-    ele_email = driver.find_element(By.XPATH, "//input[@id='input-email']")
-    ele_email.send_keys("ankitx66@gmail.com")
+    # Click continue
+    driver.find_element(By.XPATH, "//input[@type='submit']").click()
 
-    time.sleep(1)
-    # mobile number
-    ele_telephone = driver.find_element(By.XPATH, "//input[@id='input-telephone']")
-    ele_telephone.send_keys("9389715277")
+    # Wait for success page
+    success_message = wait.until(
+        EC.visibility_of_element_located((By.XPATH, "//div[@id='content']//*[text()='Your Account Has Been Created!']"))
+    )
 
-    time.sleep(1)
-    # password
-    ele_password = driver.find_element(By.XPATH, "//input[@name='password']")
-    ele_password.send_keys("Sakhamudi@3001")
-
-    time.sleep(1)
-    # confirm password
-    ele_confirm_password = driver.find_element(By.XPATH, "//input[@name='confirm']")
-    ele_confirm_password.send_keys("Sakhamudi@3001")
-
-    time.sleep(5)
-    # policy checkbox
-    policy_checkbox = driver.find_element(By.XPATH, "//input[@name='agree']")
-    policy_checkbox.click()
-
-    # continue button
-    continue_button = driver.find_element(By.XPATH, "//input[@type='submit']")
-    continue_button.click()
-
-    time.sleep(5)
+    # Assertions
     assert driver.current_url == "https://awesomeqa.com/ui/index.php?route=account/success"
-    time.sleep(5)
+    assert "Your Account Has Been Created!" in success_message.text
 
-    print("Driver Title " + driver.title)
+    print("Driver Title:", driver.title)
+    print("Success Message:", success_message.text)
 
-    message_web_element = driver.find_element(By.XPATH, "//div[@id='content']//*[text()='Your Account Has Been Created!']")
-    print(message_web_element.text)
-
-    time.sleep(5)
     driver.quit()
 
+
  # pytest -s Selenium_Project3.py --alluredir=./allure-results
+
