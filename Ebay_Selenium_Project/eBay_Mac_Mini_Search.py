@@ -29,9 +29,15 @@ def test_print_items_price():
     titles = driver.find_elements(By.XPATH, "//div[@class='s-item__title']")
     prices = driver.find_elements(By.XPATH, "//span[@class='s-item__price']")
 
-    # Pair titles and prices
+    # Collect pairs
+    items_with_prices = []
     for t, p in zip(titles, prices):
-        print(t.text, "-", p.text)
+        items_with_prices.append(f"{t.text} - {p.text}")
+
+    # Print all at once in the end
+    print("\n===== Mac Mini Items and Prices on eBay =====")
+    for item in items_with_prices:
+        print(item)
 
     time.sleep(5)
     driver.quit()
