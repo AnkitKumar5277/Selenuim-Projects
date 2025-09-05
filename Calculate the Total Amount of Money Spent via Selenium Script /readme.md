@@ -1,9 +1,3 @@
-Here’s a simple **README.md** for your Selenium parallel execution script:
-
----
-
-# 🧪 Parallel Selenium Test Script
-
 This project demonstrates how to run a Selenium automation test in **multiple browsers (Edge & Chrome) simultaneously** using **Python threading**.
 
 The script:
@@ -22,17 +16,7 @@ The script:
 * **Python 3**
 * **Selenium WebDriver**
 * **Threading (for parallel execution)**
-
----
-
-## 📂 Project Structure
-
-```
-parallel-selenium-test/
-│── main.py          # The main script with parallel execution
-│── README.md        # Documentation
-```
-
+  
 ---
 
 ## ⚙️ Installation & Setup
@@ -42,17 +26,6 @@ parallel-selenium-test/
 ```bash
 pip install selenium webdriver-manager
 ```
-
-2️⃣ Download & install **browsers** (Chrome, Edge).
-
-3️⃣ Run the script:
-
-```bash
-python main.py
-```
-
----
-
 ## 🖥️ Output Example
 
 When you run the script, it will:
@@ -77,8 +50,6 @@ Extracted values: [1250.0, -320.0, 850.0, 200.0]
 🎉 Both browsers completed successfully!
 ```
 
----
-
 ## 🧾 Notes
 
 * The script uses **threading** → Edge and Chrome run **in parallel**.
@@ -86,5 +57,3 @@ Extracted values: [1250.0, -320.0, 850.0, 200.0]
 * Uses `.quit()` at the end to close browsers automatically.
 
 ---
-
-Do you want me to also include **step-by-step screenshots** of execution (login, table extraction, etc.) inside the README? That will make it more beginner-friendly.
