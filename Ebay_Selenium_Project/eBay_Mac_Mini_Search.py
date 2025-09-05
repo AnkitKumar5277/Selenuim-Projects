@@ -16,23 +16,22 @@ def test_print_items_price():
 
     driver = webdriver.Edge(options=edge_options)
     driver.get("https://www.ebay.com/b/Desktops-All-In-One-Computers/171957/bn_1643067")
-    time.sleep(3)
+    time.sleep(2)
 
-    search_box_web_element = driver.find_element(By.XPATH, "//input[starts-with(@id,'gh')]")
-    search_box_web_element.send_keys("macmini")
+    search_box = driver.find_element(By.XPATH, "//input[starts-with(@id,'gh')]")
+    search_box.send_keys("macmini")
 
-    search_button_web_element = driver.find_element(By.CSS_SELECTOR, "#gn-search-btn")
+    search_button_web_element = driver.find_element(By.XPATH, "//span[@class='gh-search-button__label']")
     search_button_web_element.click()
+    time.sleep(2)
 
-    items_name_web_element = driver.find_elements(By.CLASS_NAME, "s-item__title")
-    items_price_web_element = driver.find_elements(By.CSS_SELECTOR, "s-item__price")
+    # Get all titles and prices
+    titles = driver.find_elements(By.XPATH, "//div[@class='s-item__title']")
+    prices = driver.find_elements(By.XPATH, "//span[@class='s-item__price']")
 
-    for name, price in zip(items_name_web_element, items_price_web_element):
-        print(f"Item: {name.text}, Price: {price.text}")
+    # Pair titles and prices
+    for t, p in zip(titles, prices):
+        print(t.text, "-", p.text)
 
     time.sleep(5)
     driver.quit()
-
-    # pytest -s C:\Users\Ankit Kumar\PycharmProjects\Focus\03_Xpath\task01_edge.py --alluredir=./allure-results
-
-    # allure serve allure-results
