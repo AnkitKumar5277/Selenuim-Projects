@@ -1,4 +1,3 @@
-````markdown
 # Opencart Registration Account Testing With Selenium (Mini Project 3)
 
 ## Overview
@@ -22,7 +21,6 @@ It verifies that a user can successfully register an account with valid data.
 2. Install dependencies:
    ```bash
    pip install selenium pytest allure-pytest
-````
 
 3. Install Edge WebDriver and ensure it matches your Edge browser version.
 
