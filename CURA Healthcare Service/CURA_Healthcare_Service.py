@@ -92,4 +92,5 @@ time.sleep(10)
 
 driver.quit()
 
-# pytest -s Selenium_Project3.py --alluredir=./allure-results
+# pytest -s main.py --alluredir=reports
+# allure serve reports
