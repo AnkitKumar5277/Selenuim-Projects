@@ -47,7 +47,12 @@ allure serve reports
 
 <img width="1919" height="995" alt="Screenshot 2026-01-20 002156" src="https://github.com/user-attachments/assets/53af64f3-c092-47cf-8bea-b9a2ac426165" />
 
+<img width="1920" height="1050" alt="Screenshot 2026-01-20 002301" src="https://github.com/user-attachments/assets/086c2df9-f8a2-435e-9f78-4c531b13b0b2" />
+
 <img width="1920" height="1050" alt="Screenshot 2026-01-20 002326" src="https://github.com/user-attachments/assets/5a994731-bb63-43f3-9993-9936cad41ecb" />
+
+<img width="1919" height="953" alt="Screenshot 2026-01-20 002211" src="https://github.com/user-attachments/assets/af18b0de-e8e6-4d13-afb5-e5c04d3e3493" />
+
 
 
 
