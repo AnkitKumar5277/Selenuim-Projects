@@ -44,6 +44,9 @@ allure serve reports
    ```
    Appointment successfully booked! Browser will close in 10 seconds.
    ```
+
+<img width="1919" height="995" alt="Screenshot 2026-01-20 002156" src="https://github.com/user-attachments/assets/53af64f3-c092-47cf-8bea-b9a2ac426165" />
+
 <img width="1920" height="1050" alt="Screenshot 2026-01-20 002326" src="https://github.com/user-attachments/assets/5a994731-bb63-43f3-9993-9936cad41ecb" />
 
 
