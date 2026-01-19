@@ -12,12 +12,6 @@ This project automates the process of booking an appointment on the **CURA Healt
   * **PyTest** → for running as a test
   * **Allure** → for HTML reporting
 
----
-
-## 📦 Install Dependencies
-
----
-
 ## ▶️ How to Run
 
 ```
