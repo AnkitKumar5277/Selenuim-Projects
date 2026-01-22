@@ -56,8 +56,6 @@ selenium_opencart_project/
 ├── reports/        # Allure reports
 └── README.md       # Project info
 ```
-
-```
 <img width="1920" height="1050" alt="Screenshot 2026-01-22 204103" src="https://github.com/user-attachments/assets/9251bdc2-8f90-4bee-8e56-665ad306f602" />
 
 <img width="1920" height="1050" alt="Screenshot 2026-01-22 204138" src="https://github.com/user-attachments/assets/8e015c4b-63dc-416d-8139-c8d7cf2459fc" />
